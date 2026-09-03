@@ -1,0 +1,159 @@
+@import 'tailwindcss';
+
+/* ── 苹方字体 ── */
+@font-face {
+  font-family: 'PingFang';
+  src: url('/Fiona/fonts/PingFang-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PingFang';
+  src: url('/Fiona/fonts/PingFang-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PingFang';
+  src: url('/Fiona/fonts/PingFang-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PingFang';
+  src: url('/Fiona/fonts/PingFang-Heavy.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PingFang';
+  src: url('/Fiona/fonts/PingFang-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  background-color: #010103;
+  overflow-x: hidden;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.font-chinese {
+  font-family: 'PingFang', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.font-premium {
+  font-family: 'PingFang', sans-serif;
+}
+
+.hd-image-fix {
+  image-rendering: -webkit-optimize-contrast;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Per-character heading colors (driven here so the theme toggle can flip them). */
+.hover-heading[data-variant='muted'] .hover-char {
+  color: #888888;
+}
+.hover-heading[data-variant='solid'] .hover-char {
+  color: #ffffff;
+}
+.hover-char {
+  transition: color 0.3s ease;
+}
+.hover-char:hover {
+  color: #ffffff;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.4);
+  color: white;
+}
+
+/* ----------------------------------------------------------------
+   Light theme — overrides the hard-coded dark Tailwind utilities.
+   Scoped under [data-theme="light"] so a single toggle flips it all.
+   ---------------------------------------------------------------- */
+[data-theme='light'] {
+  color-scheme: light;
+}
+
+/* Page + full-screen surfaces */
+[data-theme='light'].bg-\[\#010103\],
+[data-theme='light'] .bg-\[\#010103\] {
+  background-color: #ffffff !important;
+}
+
+/* Text colors */
+[data-theme='light'] .text-white {
+  color: #18181b !important;
+}
+[data-theme='light'] .text-white\/80 {
+  color: rgba(24, 24, 27, 0.8) !important;
+}
+[data-theme='light'] .text-\[\#888888\] {
+  color: #5a5a66 !important;
+}
+[data-theme='light'] .text-\[\#555555\] {
+  color: #8a8a96 !important;
+}
+[data-theme='light'] .text-black {
+  color: #ffffff !important;
+}
+
+/* Glass / translucent fills become subtle dark-on-light tints */
+[data-theme='light'] .bg-white\/5,
+[data-theme='light'] .bg-white\/\[0\.02\],
+[data-theme='light'] .bg-white\/\[0\.03\],
+[data-theme='light'] .bg-white\/\[0\.05\] {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+[data-theme='light'] .bg-white\/10,
+[data-theme='light'] .group:hover .group-hover\:bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Solid white chips (footer arrow) invert to dark */
+[data-theme='light'] .bg-white {
+  background-color: #18181b !important;
+}
+
+/* Borders */
+[data-theme='light'] .border-white\/5,
+[data-theme='light'] .border-white\/10,
+[data-theme='light'] .border-white\/20,
+[data-theme='light'] .border-white\/30 {
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Timeline node ring */
+[data-theme='light'] .ring-white\/5 {
+  --tw-ring-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Selection highlight on light bg */
+[data-theme='light'] ::selection {
+  background: rgba(59, 130, 246, 0.25);
+  color: #18181b;
+}
+
+/* Hero per-character headings under light theme */
+[data-theme='light'] .hover-heading[data-variant='solid'] .hover-char {
+  color: #18181b;
+}
+[data-theme='light'] .hover-heading[data-variant='muted'] .hover-char {
+  color: #9a9aa6;
+}
+[data-theme='light'] .hover-char:hover {
+  color: #18181b;
+}

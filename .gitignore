@@ -1,0 +1,8 @@
+node_modules
+dist
+.DS_Store
+*.local
+.vercel
+
+# Source design assets (zips) — not needed for the site build
+*.zip
